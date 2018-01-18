@@ -2,18 +2,87 @@ import java.util.*;
 
 class Taxi{
 
-	// static void Logout(String logout,String status){
+	static void macet(int tujuan){
+		
+	}
+	static void posisikota(int posisi){
+		System.out.println("");
+		if (posisi == 1) {
+			System.out.println("1. Bangil ( 30 Km )");
+			System.out.println("2. Grati ( 20 Km )");
+			System.out.println("3. Purwodadi( 60 Km)");
+		}
+		else if (posisi == 2) {			
+			System.out.println("1. Pasuruan Kota ( 30 Km )");
+			System.out.println("2. Grati ( 50 Km )");
+			System.out.println("3. Purwodadi( 74 Km)");
+		}
+		else if (posisi == 3) {
+			System.out.println("1. Pasuruan Kota ( 20 Km )");
+			System.out.println("2. Bangil ( 50 Km )");
+			System.out.println("3. Purwodadi( 80 Km)");
+		}
+		
+		System.out.println("");
+	}
 
-	// 	if (logout.equals("keluar")) {
-	// 		status = "keluar";
-	// 	}
-	// }
-	static int tigalima(String nama,String posisi1,String tujuan1,String tujuan2,String tujuan3,float jam,int bayar,int total,int tujuan){
+	static int tigapuluh(String nama,String posisi1,String posisi2,String posisi3,String tujuan1,String tujuan2,String tujuan3,float jam,int posisi,int i,int total,int tujuan){
 		Scanner scString = new Scanner(System.in);
 		Scanner sc = new Scanner(System.in);
-		total = bayar - 35000;
+		total = i - 30000;
 		System.out.println("Uang Kembalian Anda " + total);
-		tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+		if (posisi == 1) {
+			tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
+		}
+		else if (posisi == 2) {
+			tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
+		}
+		else if (posisi == 3) {
+			tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
+		}
+		
+		System.out.println("Harga Tiket Taxi :\t30000" );
+		System.out.println("Harga Kembalian :\t" +total);
+		
+		return total;
+	}
+
+	static int tigadelapan(String nama,String posisi1,String posisi2,String posisi3,String tujuan1,String tujuan2,String tujuan3,float jam,int posisi,int i,int total,int tujuan){
+		Scanner scString = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
+		total = i - 38000;
+		System.out.println("Uang Kembalian Anda " + total);
+		if (posisi == 1) {
+			tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
+		}
+		else if (posisi == 2) {
+			tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
+		}
+		else if (posisi == 3) {
+			tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
+		}
+		
+		System.out.println("Harga Tiket Taxi :\t38000" );
+		System.out.println("Harga Kembalian :\t" +total);
+		
+		return total;
+	}
+	
+	static int tigalima(String nama,String posisi1,String posisi2,String posisi3,String tujuan1,String tujuan2,String tujuan3,float jam,int posisi,int i,int total,int tujuan){
+		Scanner scString = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
+		total = i - 35000;
+		System.out.println("Uang Kembalian Anda " + total);
+		if (posisi == 1) {
+			tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
+		}
+		else if (posisi == 2) {
+			tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
+		}
+		else if (posisi == 3) {
+			tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
+		}
+		
 		System.out.println("Harga Tiket Taxi :\t35000" );
 		System.out.println("Harga Kembalian :\t" +total);
 		
@@ -23,7 +92,7 @@ class Taxi{
 	static void metode(){
 
 		System.out.println();
-		System.out.println("\tMetode Pembayaran");
+		System.out.println("\tMetode Pemian");
 		System.out.println("1. E-Buy");
 		System.out.println("2. Cash");
 	}
@@ -44,10 +113,10 @@ class Taxi{
 		}
 		else{
 			System.out.println("Error");
-		}	
+		}
 	}
 
-	static void tampilP3T1(int tujuan,String nama, String posisi3, String tujuan1,String tujuan2,String tujuan3,float jam, int bayar){
+	static void tampilP3T1(int tujuan,String nama, String posisi3, String tujuan1,String tujuan2,String tujuan3,float jam, int i){
 		System.out.println("");
 		System.out.println("Silahkan Verifikasi Kembali Data Anda");
 		System.out.println("Nama :\t\t\t" +nama);
@@ -62,9 +131,9 @@ class Taxi{
 			System.out.println("Tujuan :\t\t" +tujuan3);
 		}
 		System.out.println("Jadwal Keberangkatan :\t" +jam);
-		System.out.println("Harga Pembayaran :\t" +bayar);
+		System.out.println("Harga Pemian :\t" +i);
 	}
-	static void tampilP2T1(int tujuan,String nama, String posisi2, String tujuan1,String tujuan2,String tujuan3,float jam, int bayar){
+	static void tampilP2T1(int tujuan,String nama, String posisi2, String tujuan1,String tujuan2,String tujuan3,float jam, int i){
 		System.out.println("");
 		System.out.println("Silahkan Verifikasi Kembali Data Anda");
 		System.out.println("Nama :\t\t\t" +nama);
@@ -79,10 +148,10 @@ class Taxi{
 			System.out.println("Tujuan :\t\t" +tujuan3);
 		}
 		System.out.println("Jadwal Keberangkatan :\t" +jam);
-		System.out.println("Harga Pembayaran :\t" +bayar);
+		System.out.println("Harga Pemian :\t" +i);
 	}
 
-	static void tampilP1T1(int tujuan,String nama, String posisi1, String tujuan1,String tujuan2,String tujuan3,float jam, int bayar){
+	static void tampilP1T1(int tujuan,String nama, String posisi1, String tujuan1,String tujuan2,String tujuan3,float jam, int i){
 		System.out.println("");
 		System.out.println("Silahkan Verifikasi Kembali Data Anda");
 		System.out.println("Nama :\t\t\t" +nama);
@@ -97,7 +166,7 @@ class Taxi{
 			System.out.println("Tujuan :\t\t" +tujuan3);
 		}
 		System.out.println("Jadwal Keberangkatan :\t" +jam);
-		System.out.println("Harga Pembayaran :\t" +bayar);
+		System.out.println("Harga Pemian :\t" +i);
 	}
 
 	public static void main(String args[])
@@ -107,18 +176,26 @@ class Taxi{
 		Scanner scString = new Scanner(System.in);
 		Scanner scFloat = new Scanner(System.in);
 
-		int tujuan, harga, taxi, posisi,jl,bayar,total,uang,pilih;
+		int tujuan, harga, taxi, posisi,jl,bayar,total,uang,pilih,i;
 		String nama,code,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jalur,logout,user,password;
 		float jam;
 		String[][] User = {
 			{"panji","adan","wiji","aliyul","amin","adhe","rafif"},
 			{"111","112","113","114","115","116","117"}
 		};
+
 		total = 0;
-		bayar = 90000;
+		bayar = rn.nextInt(110000 + 1) + 10000;
+
+		for ( i = bayar; i < 110000 ;i++ ) {
+			if (i % 1000 == 0) {
+				System.out.print(i);
+				break;
+			}
+		}
 		boolean status = true,status1 = true;
 
-		 do{
+	 do{
 
 		System.out.println("");
 		System.out.print("Masukkan Nama: ");
@@ -148,12 +225,7 @@ class Taxi{
 					posisi3 = "Grati";
 					System.out.println("");
 					System.out.println("\t -- Uzer -- ");
-					System.out.println("");
-					System.out.println("1. Bangil ( 30 Km )");
-					System.out.println("2. Grati ( 20 Km )");
-					System.out.println("3. Purwodadi( 60 Km)");
-					System.out.println("");
-
+					posisikota(posisi);
 					System.out.println("Silahkan Masukkan Tujuan Anda: ");	
 					tujuan = sc.nextInt();
 
@@ -183,104 +255,157 @@ class Taxi{
 
 								metode();
 
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									do{
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
 
-									for (int i = 0;i < 2 ;i++ ) {
 										for (int j = 0;j < 7 ;j++ ) {
-											if (User[0][j].equals("panji") && User[1][j].equals("111") || User[0][j].equals("adan") && User[1][j].equals("112")||
-												User[0][j].equals("wiji") && User[1][j].equals("113") || User[0][j].equals("aliyul") && User[1][j].equals("114")||
-												User[0][j].equals("amin") && User[1][j].equals("115") || User[0][j].equals("adhe") && User[1][j].equals("116")||
-												User[0][j].equals("rafif") && User[1][j].equals("117")) 
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
 											{
 												status1 = true;
+												break;
 											}
-											
+											else{
 												status1 = false;
-											
+											}
 										}
-									}
-								}while(status1 = false);
-		
-										if(bayar > 42000){
-										total = bayar - 42000;
+										
+									}while(!status1);
+								
+										if(i > 42000){
+										total = i - 42000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t42000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+										
 									}
-									else if(bayar < 42000){
-											total = 42000 - bayar;
+									else if(i < 42000){
+											total = 42000 - i;
 											System.out.println("Uang Anda Kurang " + total);
 											System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 									}
 			
-									else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+									else{	
+											tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 											System.out.println("Harga Tiket Taxi :\t42000" );
 											System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 												code = scString.nextLine();
 												pemesanan(code);
+												System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
 									
 								}
 								else if (pilih == 2) {
 								 System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+								 status = false;
 								}
 								else{
 								  System.out.println("Error");
+								  status = false;
 								}	
 							 }
 							
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 35000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 35000){
+													do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
 
-										tigalima(nama,posisi1,tujuan1,tujuan2,tujuan3,jam,bayar,total,tujuan);
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 35000){
+
+										tigalima(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 35000){
-										total = 35000 - bayar;
+								  else if(i < 35000){
+										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
-								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t35000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
-											pemesanan(code);
+										pemesanan(code);
+										System.out.print("LogOut= ");
+										logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-									}
+									
 								}
 								else if (pilih == 2) {
-							 System.out.println("Pemesanan Anda Akan Segera Kami Proses");
-							 }
+							 		System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+									status = false;					 
+								}
 							 else{
 								System.out.println("Error");
+								status = false;
 							}
 							}
 						}
@@ -292,49 +417,83 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 35000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 35000){
-										tigalima(nama,posisi1,tujuan1,tujuan2,tujuan3,jam,bayar,total,tujuan);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+										if(i > 35000){
+										tigalima(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 35000){
-										total = 35000 - bayar;
+								  else if(i < 35000){
+										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
-								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t35000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else{
 								System.out.println("Error");
+								status = false;
 							}
 						}
 					}
 						else{
-							System.out.println("Error");   // else milik tujuan
+							System.out.println("Error");
+							status = false;   // else milik tujuan
 						}
 				} 
 						
@@ -362,100 +521,160 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 35000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 35000){
-										total = bayar - 35000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t35000" );
-										System.out.println("Harga Kembalian :\t" +total);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 35000){
+										tigalima(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 35000){
-										total = 35000 - bayar;
+								  else if(i < 35000){
+										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
-								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t35000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }else{
 								System.out.println("Error");
+								status = false;
 							}
 						}
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 30000");
 								System.out.println("Masukkan No Rekening = ");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 30000){
-										total = bayar - 30000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t30000" );
-										System.out.println("Harga Kembalian :\t" +total);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 30000){
+										tigapuluh(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 		status = true;
+										 }
 								  }
 
-								  else if(bayar < 30000){
-										total = 30000 - bayar;
+								  else if(i < 30000){
+										total = 30000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
-								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t30000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
-											pemesanan(code);
+										pemesanan(code);
+										System.out.print("LogOut= ");
+										logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 		status = true;
+										 }
 										}
 								}
-							}
 
 								else if (pilih == 2) {
-							 System.out.println("Pemesanan Anda Akan Segera Kami Proses");
-							 }
-							else{
-								System.out.println("Error");
+							 		System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+									status = false;					 
 								}
-						}else{
-							System.out.println("Error");
+								else{
+									System.out.println("Error");
+									status = false;
+								}
+							}else{
+								System.out.println("Error");
+								status = false;
+							}
 						}
-					}
 						else{
 							System.out.println("");
 							System.out.println("\t -- Uzer -- ");
@@ -464,49 +683,79 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 30000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 							pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 30000){
-										total = bayar - 30000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t30000" );
-										System.out.println("Harga Kembalian :\t" +total);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 30000){
+										tigapuluh(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 30000){
-										total = 30000 - bayar;
+								  else if(i < 30000){
+										total = 30000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
-								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t30000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 						}
 						}else{
-							System.out.println("Error");   // else milik tujuan
+							System.out.println("Error");
+							status = false;   // else milik tujuan
 						}
 
 						}
@@ -534,94 +783,160 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 82000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 82000){
-										total = bayar - 82000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 82000){
+										total = i - 82000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t82000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 82000){
-										total = 82000 - bayar;
+								  else if(i < 82000){
+										total = 82000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
-								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t82000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 						}
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 70000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
 
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
 											
-											if(bayar > 70000){
-											total = bayar - 70000;
+											if(i > 70000){
+											total = i - 70000;
 											System.out.println("Uang Kembalian Anda " + total);
-											tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+											tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 											System.out.println("Harga Tiket Taxi :\t70000" );
 											System.out.println("Harga Kembalian :\t" +total);
 											System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 											code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 70000){
-										total = 70000 - bayar;
+								  else if(i < 70000){
+										total = 70000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 									else{	
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t70000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}			
 
 								}
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -632,53 +947,88 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 70000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 							pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 70000){
-										total = bayar - 70000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 70000){
+										total = i - 70000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t70000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 70000){
-										total = 70000 - bayar;
+								  else if(i < 70000){
+										total = 70000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
-								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t70000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 						}
 						}else{
 							System.out.println("Error");
+							status = false;
 						}
 						}
 					else{
-						System.out.println("Error");  // else milik tujuan
+						System.out.println("Error");
+						status = false;  // else milik tujuan
 					}
 					}
 					else if(posisi == 2){							//Uzer Posisi Bangil
@@ -688,12 +1038,7 @@ class Taxi{
 					posisi3 = "Grati";
 					System.out.println("");
 					System.out.println("\t -- Uzer -- ");
-					System.out.println("");
-					System.out.println("1. Pasuruan Kota ( 30 Km )");
-					System.out.println("2. Grati ( 50 Km )");
-					System.out.println("3. Purwodadi( 74 Km)");
-					System.out.println("");
-
+					posisikota(posisi);
 					System.out.println("Silahkan Masukkan Tujuan Anda: ");	
 					tujuan = sc.nextInt();
 
@@ -721,46 +1066,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 42000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 42000){
-										total = bayar - 42000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 42000){
+										total = i - 42000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t42000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 42000){
-										total = 42000 - bayar;
+								  else if(i < 42000){
+										total = 42000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t42000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -769,46 +1147,75 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 35000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 35000){
-										total = bayar - 35000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t35000" );
-										System.out.println("Harga Kembalian :\t" +total);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 35000){
+										tigalima(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 35000){
-										total = 35000 - bayar;
+								  else if(i < 35000){
+										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t35000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -817,6 +1224,7 @@ class Taxi{
 
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -827,46 +1235,75 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 35000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 							pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 35000){
-										total = bayar - 35000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t35000" );
-										System.out.println("Harga Kembalian :\t" +total);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 35000){
+										tigalima(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 35000){
-										total = 35000 - bayar;
+								  else if(i < 35000){
+										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t35000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -874,7 +1311,8 @@ class Taxi{
 						}
 					}
 						else{
-							System.out.println("Error");     // else milik tujuan
+							System.out.println("Error");
+							status = false;     // else milik tujuan
 						}
 						}
 						else if(tujuan == 2){							//Uzer Posisi Bangil Tujuan Grati
@@ -901,46 +1339,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 75000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 75000){
-										total = bayar - 75000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 75000){
+										total = i - 75000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t75000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 75000){
-										total = 75000 - bayar;
+								  else if(i < 75000){
+										total = 75000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t75000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -949,46 +1420,79 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 63000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 63000){
-										total = bayar - 63000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 63000){
+										total = i - 63000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t63000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 63000){
-										total = 63000 - bayar;
+								  else if(i < 63000){
+										total = 63000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t63000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -996,6 +1500,7 @@ class Taxi{
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -1006,53 +1511,87 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 63000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 63000){
-										total = bayar - 63000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 63000){
+										total = i - 63000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t63000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 63000){
-										total = 63000 - bayar;
+								  else if(i < 63000){
+										total = 63000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t63000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
 							 }
 						}
 						}else{
-							System.out.println("Error");   // else milik tujuan
+							System.out.println("Error");
+							status = false;   // else milik tujuan
 						}
 						}
 						else if(tujuan == 3){							//Uzer Posisi Bangil Tujuan Purwodadi
@@ -1079,46 +1618,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 90000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 90000){
-										total = bayar - 90000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 90000){
+										total = i - 90000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t90000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 90000){
-										total = 90000 - bayar;
+								  else if(i < 90000){
+										total = 90000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t90000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -1127,46 +1699,79 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 80000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 80000){
-										total = bayar - 80000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 80000){
+										total = i - 80000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t80000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 80000){
-										total = 80000 - bayar;
+								  else if(i < 80000){
+										total = 80000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t80000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -1174,6 +1779,7 @@ class Taxi{
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -1184,47 +1790,78 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 80000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
-								// do{
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-								// }while();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 80000){
-										total = bayar - 80000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 80000){
+										total = i - 80000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t80000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar <80000){
-										total = 80000 - bayar;
+								  else if(i <80000){
+										total = 80000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t80000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -1233,9 +1870,11 @@ class Taxi{
 						}
 					else{
 						System.out.println("Error");
+						status = false;
 					}
 						}else{
-							System.out.println("Error");  //else milik tujuan
+							System.out.println("Error");
+							status = false;  //else milik tujuan
 						}
 					}
 		else if(posisi == 3){							//Uzer Posisi Grati
@@ -1245,12 +1884,7 @@ class Taxi{
 					posisi3 = "Grati";
 					System.out.println("");
 					System.out.println("\t -- Uzer -- ");
-					System.out.println("");
-					System.out.println("1. Pasuruan Kota ( 20 Km )");
-					System.out.println("2. Bangil ( 50 Km )");
-					System.out.println("3. Purwodadi( 80 Km)");
-					System.out.println("");
-
+					posisikota(posisi);
 					System.out.println("Silahkan Masukkan Tujuan Anda: ");	
 					tujuan = sc.nextInt();
 
@@ -1278,46 +1912,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 39000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 39000){
-										total = bayar - 39000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 39000){
+										total = i - 39000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t39000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 39000){
-										total = 39000 - bayar;
+								  else if(i < 39000){
+										total = 39000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t39000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -1326,46 +1993,75 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 30000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 30000){
-										total = bayar - 30000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t30000" );
-										System.out.println("Harga Kembalian :\t" +total);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 30000){
+										tigapuluh(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 30000){
-										total = 30000 - bayar;
+								  else if(i < 30000){
+										total = 30000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t30000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -1373,6 +2069,7 @@ class Taxi{
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -1383,53 +2080,83 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 30000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 30000){
-										total = bayar - 30000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t30000" );
-										System.out.println("Harga Kembalian :\t" +total);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 30000){
+										tigapuluh(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 30000){
-										total = 30000 - bayar;
+								  else if(i < 30000){
+										total = 30000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t30000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
 							 }
 						}
 						}else{
-							System.out.println("Error");   // else milik tujuan
+							System.out.println("Error");
+							status = false;   // else milik tujuan
 						}
 						}
 						else if(tujuan == 2){							//Uzer Posisi Garti Tujuan Bangil
@@ -1456,46 +2183,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 75000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 75000){
-										total = bayar - 75000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 75000){
+										total = i - 75000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t75000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 75000){
-										total = 75000 - bayar;
+								  else if(i < 75000){
+										total = 75000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t75000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -1504,46 +2264,79 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 63000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 63000){
-										total = bayar - 63000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 63000){
+										total = i - 63000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t63000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 63000){
-										total = 63000 - bayar;
+								  else if(i < 63000){
+										total = 63000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t63000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -1551,6 +2344,7 @@ class Taxi{
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -1561,53 +2355,87 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 63000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 63000){
-										total = bayar - 63000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 63000){
+										total = i - 63000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t63000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 63000){
-										total = 63000 - bayar;
+								  else if(i < 63000){
+										total = 63000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t63000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
 							 }
 						}
 						}else{
-							System.out.println("Error");   // else milik tujuan
+							System.out.println("Error");
+							status = false;   // else milik tujuan
 						}
 						}
 						else if(tujuan == 3){							//Uzer Posisi Grati Tujuan Purwodadi
@@ -1634,46 +2462,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 94000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 94000){
-										total = bayar - 94000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 94000){
+										total = i - 94000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t94000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 94000){
-										total = 94000 - bayar;
+								  else if(i < 94000){
+										total = 94000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t94000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -1682,46 +2543,79 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 85000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 85000){
-										total = bayar - 85000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 85000){
+										total = i - 85000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t85000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 85000){
-										total = 85000 - bayar;
+								  else if(i < 85000){
+										total = 85000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t85000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -1729,6 +2623,7 @@ class Taxi{
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -1739,46 +2634,79 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 85000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 85000){
-										total = bayar - 85000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 85000){
+										total = i - 85000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t85000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 85000){
-										total = 85000 - bayar;
+								  else if(i < 85000){
+										total = 85000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t85000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -1786,14 +2714,17 @@ class Taxi{
 						}
 						}else{
 							System.out.println("Error");
+							status = false;
 						}
 						}
 					else{
-						System.out.println("Error");  // else milik tujuan
+						System.out.println("Error");
+						status = false;  // else milik tujuan
 					}
 					
 				}else{
-					System.out.println("Error");   //else milik posisi
+					System.out.println("Error");
+					status = false;   //else milik posisi
 				}
 			}
 			//------------------------------------------------------------------------------------------------------------------------------------
@@ -1812,11 +2743,7 @@ class Taxi{
 					posisi3 = "Grati";
 					System.out.println("");
 					System.out.println("\t ** Glab ** ");
-					System.out.println("");
-					System.out.println("1. Bangil ( 30 Km )");
-					System.out.println("2. Grati ( 20 Km )");
-					System.out.println("3. Purwodadi( 60 Km)");
-					System.out.println("");
+					posisikota(posisi);
 
 					System.out.println("Silahkan Masukkan Tujuan Anda: ");	
 					tujuan = sc.nextInt();
@@ -1845,46 +2772,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 47000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 47000){
-										total = bayar - 47000;
+									do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 47000){
+										total = i - 47000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t47000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 47000){
-										total = 47000 - bayar;
+								  else if(i < 47000){
+										total = 47000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t47000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -1893,46 +2853,75 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 38000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 38000){
-										total = bayar - 38000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t38000" );
-										System.out.println("Harga Kembalian :\t" +total);
+									do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 38000){
+										tigadelapan(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 38000){
-										total = 38000 - bayar;
+								  else if(i < 38000){
+										total = 38000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t38000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -1940,6 +2929,7 @@ class Taxi{
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -1950,46 +2940,75 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 38000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 38000){
-										total = bayar - 38000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t38000" );
-										System.out.println("Harga Kembalian :\t" +total);
+									do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 38000){
+										tigadelapan(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 38000){
-										total = 38000 - bayar;
+								  else if(i < 38000){
+										total = 38000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t38000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+							
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -1997,7 +3016,8 @@ class Taxi{
 						}
 						}
 						else{
-							System.out.println("Error");    // else milik tujuan
+							System.out.println("Error");
+							status = false;    // else milik tujuan
 						}
 						}
 						
@@ -2025,46 +3045,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 44000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 44000){
-										total = bayar - 44000;
+									do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 44000){
+										total = i - 44000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t44000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 44000){
-										total = 44000 - bayar;
+								  else if(i < 44000){
+										total = 44000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t44000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -2073,46 +3126,75 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 35000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 35000){
-										total = bayar - 35000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t35000" );
-										System.out.println("Harga Kembalian :\t" +total);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 35000){
+										tigalima(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 35000){
-										total = 35000 - bayar;
+								  else if(i < 35000){
+										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t35000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -2120,6 +3202,7 @@ class Taxi{
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -2130,53 +3213,83 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 35000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 35000){
-										total = bayar - 35000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t35000" );
-										System.out.println("Harga Kembalian :\t" +total);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 35000){
+										tigalima(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 35000){
-										total = 35000 - bayar;
+								  else if(i < 35000){
+										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t35000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
 							 }
 						}
 						}else{
-							System.out.println("Error");   // else milik tujuan
+							System.out.println("Error");
+							status = false;   // else milik tujuan
 						}
 
 						}
@@ -2204,46 +3317,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 89000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 89000){
-										total = bayar - 89000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 89000){
+										total = i - 89000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t89000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 89000){
-										total = 89000 - bayar;
+								  else if(i < 89000){
+										total = 89000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t89000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -2251,46 +3397,79 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 77000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 77000){
-										total = bayar - 77000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 77000){
+										total = i - 77000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t77000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 77000){
-										total = 77000 - bayar;
+								  else if(i < 77000){
+										total = 77000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t77000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -2298,6 +3477,7 @@ class Taxi{
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -2308,46 +3488,79 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 77000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 77000){
-										total = bayar - 77000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 77000){
+										total = i - 77000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t77000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 77000){
-										total = 77000 - bayar;
+								  else if(i < 77000){
+										total = 77000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t77000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -2355,10 +3568,12 @@ class Taxi{
 						}
 						}else{
 							System.out.println("Error");
+							status = false;
 						}
 						}
 					else{
-						System.out.println("Error"); // else milik tujuan
+						System.out.println("Error");
+						status = false; // else milik tujuan
 					}
 					}
 					else if(posisi == 2){							//Glab Posisi Bangil
@@ -2368,11 +3583,7 @@ class Taxi{
 					posisi3 = "Grati";
 					System.out.println("");
 					System.out.println("\t ** Glab ** ");
-					System.out.println("");
-					System.out.println("1. Pasuruan Kota ( 30 Km )");
-					System.out.println("2. Grati ( 50 Km )");
-					System.out.println("3. Purwodadi( 74 Km)");
-					System.out.println("");
+					posisikota(posisi);
 
 					System.out.println("Silahkan Masukkan Tujuan Anda: ");	
 					tujuan = sc.nextInt();
@@ -2401,46 +3612,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 47000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 47000){
-										total = bayar - 47000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 47000){
+										total = i - 47000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t47000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 47000){
-										total = 47000 - bayar;
+								  else if(i < 47000){
+										total = 47000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t47000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -2449,46 +3693,75 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 38000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 38000){
-										total = bayar - 38000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t38000" );
-										System.out.println("Harga Kembalian :\t" +total);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 38000){
+										tigadelapan(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 38000){
-										total = 38000 - bayar;
+								  else if(i < 38000){
+										total = 38000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t38000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -2496,6 +3769,7 @@ class Taxi{
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -2506,46 +3780,75 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 38000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 38000){
-										total = bayar - 38000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t38000" );
-										System.out.println("Harga Kembalian :\t" +total);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 38000){
+										tigadelapan(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 38000){
-										total = 38000 - bayar;
+								  else if(i < 38000){
+										total = 38000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t38000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -2553,7 +3856,8 @@ class Taxi{
 						}
 					}
 						else{
-							System.out.println("Error"); // else milik tujuan
+							System.out.println("Error");
+							status = false; // else milik tujuan
 						}
 						}
 						else if(tujuan == 2){							//Glab Posisi Bangil Tujuan Grati
@@ -2580,46 +3884,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 78000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 78000){
-										total = bayar - 78000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 78000){
+										total = i - 78000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t78000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 78000){
-										total = 78000 - bayar;
+								  else if(i < 78000){
+										total = 78000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t78000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -2628,46 +3965,79 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 66000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 66000){
-										total = bayar - 66000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 66000){
+										total = i - 66000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t66000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 66000){
-										total = 66000 - bayar;
+								  else if(i < 66000){
+										total = 66000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t66000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -2675,6 +4045,7 @@ class Taxi{
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -2685,53 +4056,87 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 56000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 56000){
-										total = bayar - 56000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 56000){
+										total = i - 56000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t56000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 56000){
-										total = 56000 - bayar;
+								  else if(i < 56000){
+										total = 56000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t56000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
 							 }
 						}
 						}else{
-							System.out.println("Error");   //else milik tujuan
+							System.out.println("Error");
+							status = false;   //else milik tujuan
 						}
 						}
 						else if(tujuan == 3){							//Glab Posisi Bangil Tujuan Purwodadi
@@ -2758,46 +4163,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 98000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 98000){
-										total = bayar - 98000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 98000){
+										total = i - 98000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t47000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 98000){
-										total = 98000 - bayar;
+								  else if(i < 98000){
+										total = 98000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t98000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -2806,53 +4244,85 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 86000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 86000){
-										total = bayar - 86000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 86000){
+										total = i - 86000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t86000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 86000){
-										total = 86000 - bayar;
+								  else if(i < 86000){
+										total = 86000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t86000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
-										}
-								}
-							}
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
 
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 		status = true;
+										 }
+									}
+								
+							}
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
-							 }
-							 else {
-							 	System.out.print("Error");
-							 }
-						}
-							else{
+							 	status = false;
+							 	}
+							 	else {
+								 	System.out.print("Error");
+								 }
+						}else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -2863,46 +4333,77 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 86000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 86000){
-										total = bayar - 86000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 86000){
+										total = i - 86000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t86000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 86000){
-										total = 86000 - bayar;
+								  else if(i < 86000){
+										total = 86000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t86000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
-										}
-								}
-							}
+											System.out.print("LogOut= ");
+											 logout = scString.nextLine();
 
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+										}
+							}
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -2911,9 +4412,11 @@ class Taxi{
 						}
 					else{
 						System.out.println("Error");
+						status = false;
 					}
 						}else{
-							System.out.println("Error"); // else milik tujuan
+							System.out.println("Error");
+							status = false; // else milik tujuan
 						}
 					}
 		else if(posisi == 3){							//Glab Posisi Grati
@@ -2923,12 +4426,7 @@ class Taxi{
 					posisi3 = "Grati";
 					System.out.println("");
 					System.out.println("\t ** Glab ** ");
-					System.out.println("");
-					System.out.println("1. Pasuruan Kota ( 20 Km )");
-					System.out.println("2. Bangil ( 50 Km )");
-					System.out.println("3. Purwodadi( 80 Km)");
-					System.out.println("");
-
+					posisikota(posisi);
 					System.out.println("Silahkan Masukkan Tujuan Anda: ");	
 					tujuan = sc.nextInt();
 
@@ -2956,46 +4454,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 44000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 44000){
-										total = bayar - 44000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 44000){
+										total = i - 44000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t44000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 44000){
-										total = 44000 - bayar;
+								  else if(i < 44000){
+										total = 44000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t44000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -3004,46 +4535,75 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 35000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 35000){
-										total = bayar - 35000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t35000" );
-										System.out.println("Harga Kembalian :\t" +total);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 35000){
+										tigalima(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 35000){
-										total = 35000 - bayar;
+								  else if(i < 35000){
+										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t35000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -3051,6 +4611,7 @@ class Taxi{
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -3062,53 +4623,83 @@ class Taxi{
 							System.out.println("Harga = 35000");
 
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 35000){
-										total = bayar - 35000;
-										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
-										System.out.println("Harga Tiket Taxi :\t35000" );
-										System.out.println("Harga Kembalian :\t" +total);
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 35000){
+										tigalima(nama,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jam,posisi,i,total,tujuan);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 35000){
-										total = 35000 - bayar;
+								  else if(i < 35000){
+										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t35000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
 							 }             
 						}
 						}else{
-							System.out.println("Error");  // else milik tujuan 
+							System.out.println("Error");
+							status = false;  // else milik tujuan 
 						}
 						}
 						else if(tujuan == 2){							//Glab Posisi Garti Tujuan Bangil
@@ -3135,46 +4726,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 78000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 78000){
-										total = bayar - 78000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 78000){
+										total = i - 78000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t78000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 78000){
-										total = 78000 - bayar;
+								  else if(i < 78000){
+										total = 78000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t78000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -3183,45 +4807,78 @@ class Taxi{
 							else if(jalur.equals("t")){
 								System.out.println("Harga = 66000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 66000){
-										total = bayar - 66000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 66000){
+										total = i - 66000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t66000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 66000){
-										total = 66000 - bayar;
+								  else if(i < 66000){
+										total = 66000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t66000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -3229,6 +4886,7 @@ class Taxi{
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -3239,53 +4897,87 @@ class Taxi{
 							System.out.println("");
 							System.out.println("Harga = 66000");
 							metode();
-							System.out.println("Masukkan Metode Pembayaran: ");
+							System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 66000){
-										total = bayar - 66000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 66000){
+										total = i - 66000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t66000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 66000){
-										total = 66000 - bayar;
+								  else if(i < 66000){
+										total = 66000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t66000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
 							 }             
 						}
 						}else{
-							System.out.println("Error");   //else milik tujuan
+							System.out.println("Error");
+							status = false;   //else milik tujuan
 						}
 						}
 						else if(tujuan == 3){							//Glab Posisi Grati Tujuan Purwodadi     
@@ -3312,46 +5004,79 @@ class Taxi{
 							if(jalur.equals("y")){
 								System.out.println("Harga = 100000");
 								metode();
-								System.out.println("Masukkan Metode Pembayaran: ");
+								System.out.println("Masukkan Metode Pemian: ");
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
-										if(bayar > 1000000){
-										total = bayar - 1000000;
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
+										if(i > 1000000){
+										total = i - 1000000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t1000000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
-								  else if(bayar < 1000000){
-										total = 1000000 - bayar;
+								  else if(i < 1000000){
+										total = 1000000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t1000000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -3364,21 +5089,44 @@ class Taxi{
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
 										if(bayar > 89000){
 										total = bayar - 89000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,bayar);
 										System.out.println("Harga Tiket Taxi :\t89000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
 								  else if(bayar < 89000){
@@ -3388,18 +5136,28 @@ class Taxi{
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,bayar);
 										System.out.println("Harga Tiket Taxi :\t89000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -3407,6 +5165,7 @@ class Taxi{
 						}
 							else{
 								System.out.println("Error");
+								status = false;
 								}
 						}
 						else{
@@ -3421,21 +5180,44 @@ class Taxi{
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-									System.out.print("Username: ");
-									user = scString.nextLine();
-									System.out.print(("Password: "));
-									password = scString.nextLine();
-									if (user.equals("admin") && password.equals("123")) {
+																		do{
+										System.out.print("Username: ");
+										user = scString.nextLine();
+										System.out.print(("Password: "));
+										password = scString.nextLine();
+
+										for (int j = 0;j < 7 ;j++ ) {
+											if (User[0][j].equals(user) && User[1][j].equals(password)) 
+											{
+												status1 = true;
+												break;
+											}
+											else{
+												status1 = false;
+											}
+										}
+										
+									}while(!status1);
+									
 										if(bayar > 89000){
 										total = bayar - 89000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,bayar);
 										System.out.println("Harga Tiket Taxi :\t89000" );
 										System.out.println("Harga Kembalian :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 										pemesanan(code);
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 								  }
 
 								  else if(bayar < 89000){
@@ -3445,18 +5227,28 @@ class Taxi{
 								  }
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,bayar);
 										System.out.println("Harga Tiket Taxi :\t89000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
 											pemesanan(code);
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
 										}
-								}
+								
 							}
 
 								else if (pilih == 2) {
 							 	System.out.println("Pemesanan Anda Akan Segera Kami Proses");
+							 	status = false;
 							 }
 							 else {
 							 	System.out.print("Error");
@@ -3464,29 +5256,28 @@ class Taxi{
 						}
 						}else{
 							System.out.println("Error");
+							status = false;
 						}
 						}
 					else{
-						System.out.println("Error");  //else milik tujuan
+						System.out.println("Error");
+						status = false;  //else milik tujuan
 					}
 
 					}else{
-						System.out.println("Error");	//else milik poisisi
+						System.out.println("Error");
+						status = false;	//else milik poisisi
 					}
 				}	
 				else{
-					System.out.println("Error");     //else miliki Taxi Online
+					System.out.println("Error");
+					status = false;     //else miliki Taxi Online
 				}
-
-				// System.out.print("LogOut= ");
-				// logout = scString.nextLine();
-
-				// if (logout.equals("y")) {
-				// 	status = false;
-				// }
 				// Logout(logout,status);
 		 }
-		 while (status = false);
-		
+		 while (status == true);
 	}
 }
+									
+								
+
