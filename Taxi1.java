@@ -1,10 +1,22 @@
-import java.util.*;
+import java.util.Scanner;
+import java.util.Random;
 
 class Taxi{
 
-	static void macet(int tujuan){
-		
+	static String password(String password){
+		Scanner scString = new Scanner(System.in);
+		System.out.print("Password: ");
+		password = scString.nextLine();
+		return password;
 	}
+
+	static String user(String user){
+		Scanner scString = new Scanner(System.in);
+		System.out.print("Username: ");
+		user = scString.nextLine();
+		return user;
+	}
+
 	static void posisikota(int posisi){
 		System.out.println("");
 		if (posisi == 1) {
@@ -42,7 +54,7 @@ class Taxi{
 		}
 		
 		System.out.println("Harga Tiket Taxi :\t30000" );
-		System.out.println("Harga Kembalian :\t" +total);
+		System.out.println("Sisa Saldo Anda :\t" +total);
 		
 		return total;
 	}
@@ -63,7 +75,7 @@ class Taxi{
 		}
 		
 		System.out.println("Harga Tiket Taxi :\t38000" );
-		System.out.println("Harga Kembalian :\t" +total);
+		System.out.println("Sisa Saldo Anda :\t" +total);
 		
 		return total;
 	}
@@ -84,7 +96,7 @@ class Taxi{
 		}
 		
 		System.out.println("Harga Tiket Taxi :\t35000" );
-		System.out.println("Harga Kembalian :\t" +total);
+		System.out.println("Sisa Saldo Anda :\t" +total);
 		
 		return total;
 	}
@@ -92,7 +104,7 @@ class Taxi{
 	static void metode(){
 
 		System.out.println();
-		System.out.println("\tMetode Pemian");
+		System.out.println("\tMetode Pembelian");
 		System.out.println("1. E-Buy");
 		System.out.println("2. Cash");
 	}
@@ -131,7 +143,7 @@ class Taxi{
 			System.out.println("Tujuan :\t\t" +tujuan3);
 		}
 		System.out.println("Jadwal Keberangkatan :\t" +jam);
-		System.out.println("Harga Pemian :\t" +i);
+		System.out.println("Jumlah Saldo Anda :\t" +i);
 	}
 	static void tampilP2T1(int tujuan,String nama, String posisi2, String tujuan1,String tujuan2,String tujuan3,float jam, int i){
 		System.out.println("");
@@ -148,7 +160,7 @@ class Taxi{
 			System.out.println("Tujuan :\t\t" +tujuan3);
 		}
 		System.out.println("Jadwal Keberangkatan :\t" +jam);
-		System.out.println("Harga Pemian :\t" +i);
+		System.out.println("Jumlah Saldo Anda :\t" +i);
 	}
 
 	static void tampilP1T1(int tujuan,String nama, String posisi1, String tujuan1,String tujuan2,String tujuan3,float jam, int i){
@@ -166,7 +178,7 @@ class Taxi{
 			System.out.println("Tujuan :\t\t" +tujuan3);
 		}
 		System.out.println("Jadwal Keberangkatan :\t" +jam);
-		System.out.println("Harga Pemian :\t" +i);
+		System.out.println("Jumlah Saldo Anda :\t" +i);
 	}
 
 	public static void main(String args[])
@@ -176,20 +188,23 @@ class Taxi{
 		Scanner scString = new Scanner(System.in);
 		Scanner scFloat = new Scanner(System.in);
 
-		int tujuan, harga, taxi, posisi,jl,bayar,total,uang,pilih,i;
+		int tujuan, harga, taxi, posisi,jl,bayar,total,uang,pilih,i,x;
 		String nama,code,posisi1,posisi2,posisi3,tujuan1,tujuan2,tujuan3,jalur,logout,user,password;
 		float jam;
+		user="";
+		password="";
 		String[][] User = {
 			{"panji","adan","wiji","aliyul","amin","adhe","rafif"},
 			{"111","112","113","114","115","116","117"}
 		};
 
 		total = 0;
-		bayar = rn.nextInt(110000 + 1) + 10000;
+		bayar = rn.nextInt(110000 + 1) + 50000;
+		i = 0;
 
-		for ( i = bayar; i < 110000 ;i++ ) {
-			if (i % 1000 == 0) {
-				System.out.print(i);
+		for ( x = bayar; x < 110000 ;x++ ) {
+			if (x % 1000 == 0) {
+				i = x;
 				break;
 			}
 		}
@@ -259,12 +274,9 @@ class Taxi{
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-																		do{
-										System.out.print("Username: ");
-										user = scString.nextLine();
-										System.out.print(("Password: "));
-										password = scString.nextLine();
-
+									do{
+										user(user);
+										password(password);
 										for (int j = 0;j < 7 ;j++ ) {
 											if (User[0][j].equals(user) && User[1][j].equals(password)) 
 											{
@@ -283,7 +295,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t42000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 										pemesanan(code);
@@ -302,7 +314,18 @@ class Taxi{
 											total = 42000 - i;
 											System.out.println("Uang Anda Kurang " + total);
 											System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+											System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 									}
+
 			
 									else{	
 											tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
@@ -379,7 +402,18 @@ class Taxi{
 										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t35000" );
@@ -460,7 +494,18 @@ class Taxi{
 										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t35000" );
@@ -565,7 +610,18 @@ class Taxi{
 										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t35000" );
@@ -642,7 +698,18 @@ class Taxi{
 										total = 30000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t30000" );
@@ -727,7 +794,18 @@ class Taxi{
 										total = 30000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t30000" );
@@ -811,7 +889,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t82000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -831,7 +909,18 @@ class Taxi{
 										total = 82000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t82000" );
@@ -888,7 +977,7 @@ class Taxi{
 											System.out.println("Uang Kembalian Anda " + total);
 											tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 											System.out.println("Harga Tiket Taxi :\t70000" );
-											System.out.println("Harga Kembalian :\t" +total);
+											System.out.println("Sisa Saldo Anda :\t" +total);
 											System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 											code = scString.nextLine();
 
@@ -908,7 +997,18 @@ class Taxi{
 										total = 70000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 									else{	
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
@@ -975,7 +1075,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t70000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -995,7 +1095,18 @@ class Taxi{
 										total = 70000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t70000" );
@@ -1094,7 +1205,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t42000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -1114,7 +1225,18 @@ class Taxi{
 										total = 42000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -1191,7 +1313,18 @@ class Taxi{
 										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -1279,7 +1412,18 @@ class Taxi{
 										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -1367,7 +1511,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t75000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -1387,7 +1531,18 @@ class Taxi{
 										total = 75000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -1448,7 +1603,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t63000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -1468,7 +1623,18 @@ class Taxi{
 										total = 63000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -1539,7 +1705,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t63000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -1559,7 +1725,18 @@ class Taxi{
 										total = 63000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -1646,7 +1823,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t90000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -1666,7 +1843,18 @@ class Taxi{
 										total = 90000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -1727,7 +1915,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t80000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -1747,7 +1935,18 @@ class Taxi{
 										total = 80000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -1817,7 +2016,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t80000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -1837,7 +2036,18 @@ class Taxi{
 										total = 80000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -1940,7 +2150,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t39000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -1960,7 +2170,18 @@ class Taxi{
 										total = 39000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -1997,7 +2218,7 @@ class Taxi{
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-																		do{
+									do{
 										System.out.print("Username: ");
 										user = scString.nextLine();
 										System.out.print(("Password: "));
@@ -2037,7 +2258,18 @@ class Taxi{
 										total = 30000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -2124,7 +2356,18 @@ class Taxi{
 										total = 30000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -2211,7 +2454,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t75000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -2231,7 +2474,18 @@ class Taxi{
 										total = 75000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -2292,7 +2546,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t63000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -2312,7 +2566,18 @@ class Taxi{
 										total = 63000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -2383,7 +2648,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t63000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -2403,7 +2668,18 @@ class Taxi{
 										total = 63000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -2490,7 +2766,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t94000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -2510,7 +2786,18 @@ class Taxi{
 										total = 94000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -2571,7 +2858,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t85000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -2591,7 +2878,18 @@ class Taxi{
 										total = 85000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -2662,7 +2960,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t85000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -2682,7 +2980,18 @@ class Taxi{
 										total = 85000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -2800,7 +3109,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t47000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -2820,7 +3129,18 @@ class Taxi{
 										total = 47000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
@@ -2897,7 +3217,18 @@ class Taxi{
 										total = 38000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
@@ -2984,7 +3315,18 @@ class Taxi{
 										total = 38000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
@@ -3073,7 +3415,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t44000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -3093,7 +3435,18 @@ class Taxi{
 										total = 44000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
@@ -3170,7 +3523,18 @@ class Taxi{
 										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
@@ -3257,7 +3621,18 @@ class Taxi{
 										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
@@ -3345,7 +3720,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t89000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -3365,7 +3740,18 @@ class Taxi{
 										total = 89000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
@@ -3425,7 +3811,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t77000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -3445,7 +3831,18 @@ class Taxi{
 										total = 77000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
@@ -3516,7 +3913,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t77000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -3536,7 +3933,18 @@ class Taxi{
 										total = 77000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP1T1(tujuan,nama, posisi1,tujuan1,tujuan2,tujuan3,jam,i);
@@ -3640,7 +4048,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t47000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -3660,7 +4068,18 @@ class Taxi{
 										total = 47000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -3737,7 +4156,18 @@ class Taxi{
 										total = 38000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -3824,7 +4254,18 @@ class Taxi{
 										total = 38000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -3912,7 +4353,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t78000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -3932,7 +4373,18 @@ class Taxi{
 										total = 78000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -3993,7 +4445,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t66000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -4013,7 +4465,18 @@ class Taxi{
 										total = 66000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -4084,7 +4547,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t56000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -4104,7 +4567,18 @@ class Taxi{
 										total = 56000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -4191,7 +4665,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t47000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -4211,7 +4685,18 @@ class Taxi{
 										total = 98000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -4272,7 +4757,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t86000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -4292,7 +4777,18 @@ class Taxi{
 										total = 86000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -4361,7 +4857,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t86000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -4381,7 +4877,18 @@ class Taxi{
 										total = 86000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP2T1(tujuan,nama, posisi2,tujuan1,tujuan2,tujuan3,jam,i);
@@ -4482,7 +4989,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t44000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -4502,7 +5009,18 @@ class Taxi{
 										total = 44000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -4579,7 +5097,18 @@ class Taxi{
 										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -4667,7 +5196,18 @@ class Taxi{
 										total = 35000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -4754,7 +5294,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t78000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -4774,7 +5314,18 @@ class Taxi{
 										total = 78000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -4835,7 +5386,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t66000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -4855,7 +5406,18 @@ class Taxi{
 										total = 66000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -4901,7 +5463,7 @@ class Taxi{
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-																		do{
+									do{
 										System.out.print("Username: ");
 										user = scString.nextLine();
 										System.out.print(("Password: "));
@@ -4925,7 +5487,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t66000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -4945,7 +5507,18 @@ class Taxi{
 										total = 66000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -5032,7 +5605,7 @@ class Taxi{
 										System.out.println("Uang Kembalian Anda " + total);
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t1000000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -5052,7 +5625,18 @@ class Taxi{
 										total = 1000000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
 										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
@@ -5108,12 +5692,12 @@ class Taxi{
 										
 									}while(!status1);
 									
-										if(bayar > 89000){
-										total = bayar - 89000;
+										if(i > 89000){
+										total = i - 89000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t89000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -5129,14 +5713,25 @@ class Taxi{
 										 }
 								  }
 
-								  else if(bayar < 89000){
-										total = 89000 - bayar;
+								  else if(i < 89000){
+										total = 89000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t89000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
@@ -5180,7 +5775,7 @@ class Taxi{
 								pilih = sc.nextInt();
 
 								if (pilih == 1) {
-																		do{
+									do{
 										System.out.print("Username: ");
 										user = scString.nextLine();
 										System.out.print(("Password: "));
@@ -5199,12 +5794,12 @@ class Taxi{
 										
 									}while(!status1);
 									
-										if(bayar > 89000){
-										total = bayar - 89000;
+										if(i > 89000){
+										total = i - 89000;
 										System.out.println("Uang Kembalian Anda " + total);
-										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t89000" );
-										System.out.println("Harga Kembalian :\t" +total);
+										System.out.println("Sisa Saldo Anda :\t" +total);
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
 
@@ -5220,14 +5815,25 @@ class Taxi{
 										 }
 								  }
 
-								  else if(bayar < 89000){
-										total = 89000 - bayar;
+								  else if(i < 89000){
+										total = 89000 - i;
 										System.out.println("Uang Anda Kurang " + total);
 										System.out.println("Maaf Data Anda Tidak Dapat Kami Proses");
+										System.out.print("LogOut= ");
+										 logout = scString.nextLine();
+
+										 if (logout.equals("y")) {
+								 			status = false;
+										 }
+										 else if (logout.equals("t")) {
+									 	status = true;
+										 }
+
 								  }
+
 								
 								else{	
-										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,bayar);
+										tampilP3T1(tujuan,nama, posisi3,tujuan1,tujuan2,tujuan3,jam,i);
 										System.out.println("Harga Tiket Taxi :\t89000" );
 										System.out.println("Apakah Data Anda Sudah Benar (y/t) = ");
 										code = scString.nextLine();
